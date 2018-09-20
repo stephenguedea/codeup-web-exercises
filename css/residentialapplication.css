@@ -1,0 +1,42 @@
+h1 {
+    color: black;
+    font-family: Damascus;
+}
+
+
+h2 {
+    color: black;
+    text-decoration: underline;
+    font-family: Damascus;
+}
+
+h4, h5 {
+    font-family: "Times New Roman";
+    font-size: small;
+
+}
+
+body {
+    background-image: url("../img/dust_scratches.png");
+}
+
+label {
+    color: black;
+
+}
+
+a:hover {
+    color: green;
+
+}
+
+a:visited {
+    color: red;
+}
+
+a:active {
+    color: yellow;
+}
+
+
+/* this is for comments */

@@ -1,0 +1,64 @@
+.fancy-header {
+    color: #d8e2ad; /* single line comment */
+    text-decoration: underline;
+}
+h2 {
+    text-decoration: underline;
+}
+
+body {
+    background-image: url("../img/connectwork.png");
+}
+
+header {
+    text-align: center;
+    color: #deffc3;
+    text-decoration: underline;
+}
+
+body {
+    color: #d8e2ad;
+    font-family: "Malayalam MN";
+}
+
+section {
+    text-indent: 12px;
+}
+
+footer {
+    color: #e2e1de;
+}
+
+ol {
+    text-indent: 2px;
+    list-style: upper-roman;
+}
+ul {
+    text-indent: 2px;
+    list-style: square;
+}
+
+th {
+    text-decoration: underline;
+    text-align: left;
+    text-indent: 50px;
+}
+tr, td {
+    text-align: left;
+    text-indent: 50px;
+
+}
+
+a:hover {
+    color: green;
+
+}
+
+a:visited {
+    color: red;
+}
+
+a:active {
+    color: yellow;
+}
+

@@ -1,0 +1,29 @@
+.box {
+    text-decoration: underline;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    border: 10px solid green;
+    margin: 15px;
+
+}
+
+.box1 {
+    background: red;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    border: 10px solid black;
+    margin: 15px;
+
+}
+
+.box2 {
+    background: blue;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    border: 10px solid black;
+    margin: 15px;
+
+}
