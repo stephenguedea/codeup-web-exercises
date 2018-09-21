@@ -1,0 +1,45 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, 'sans-serif';
+    text-indent: 5px;
+
+}
+
+.message {
+    width: auto;
+    height: 50px;
+    padding: 5px;
+    border: 2px;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.message-info {
+    background-color: rgb(197	213	247	);
+    color: rgb(53	7	144	);
+    line-height: 50px;
+
+}
+
+.message-success {
+    background-color: rgb(197	245	216	);
+    color: rgb(0 108 45);
+    line-height: 50px;
+
+}
+
+.message-warning {
+    background-color: rgb(249	252	193	);
+    color: rgb(147	130	21	);
+    line-height: 50px;
+}
+
+.message-error {
+    background-color: rgb(255	209	214	);
+    color: rgb(150	34	56);
+    line-height: 50px;
+
+}
