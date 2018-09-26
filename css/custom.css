@@ -1,0 +1,54 @@
+h1.display-4 {
+    width: 100%;
+    margin: 0;
+}
+.jumbotron {
+    background-image: url("../img/pizza-image.png");
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    background-color: rgba(238,229,241,0.62);
+    width: 100%;
+
+}
+.card-header {
+    background-color: rgb(0	108	255	);
+    color: white;
+    width: 100%;
+}
+.card {
+    width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    color: white;
+}
+.card-title {
+    width: 100%;
+
+    background-color: rgb(0	108	255	);
+    color: white;
+}
+li {
+    color: black;
+}
+.card-body {
+    color: black;
+    background-color: white;
+    padding-top: 0;
+}
+.card-text {
+    background-color: white;
+}
+.btn-primary {
+    float: right;
+    margin-top: 10px;
+}
+
+.card-footer {
+    height: 10%;
+    border-color: rgb(223	223	223	);
+    border: 1px;
+    width: 100%;
+}
+
