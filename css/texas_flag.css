@@ -1,0 +1,52 @@
+
+
+.box1 {
+    background: rgb(185	0	42	);
+    width: 325px;
+    height: 149px;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 0px;
+    float: left;
+    position: absolute;
+
+}
+
+.box2 {
+    background: white;
+    width: 335px;
+    height: 78px;
+    padding: 0px;
+    border: 1px solid black;
+    margin: 0px;
+    float: left;
+
+    position: absolute;
+
+
+}
+
+.box3 {
+    background-color: #2727b9;
+    width: 82px;
+    height: 148px;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 0px;
+    float: left;
+
+    position: absolute;
+}
+
+.star {
+    background-color: #2727b9;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    border: 1px solid black;
+    margin: 5px;
+    float: left;
+
+    position: absolute;
+
+}
