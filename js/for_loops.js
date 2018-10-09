@@ -21,9 +21,11 @@ for (var i = 0; i < 10; i++) {
 
 
     for (var x = 1; x < 10; x++) {
-        for (var y = 0; y < x; y++) {
-            console.log(x);
+        var numString = '';
+        for (var y = 1; y <= x; y++) {
+        numString += x;
         }
+        console.log(numString);
     }
 
 
