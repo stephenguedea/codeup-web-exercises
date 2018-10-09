@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Inline Javascript</title>
+        </head>
+        <body>
+        <script>
+            "use strict";
+
+        // 2. var sample = "Hello Codeup";
+
+        var sample = 'Hello Codeup';
+
+        // Use .length to find the number of characters in the string.
+        console.log(sample.length);
+
+        // Make the sample string all upper/lower case
+        console.log(sample.toUpperCase());
+
+        console.log(sample.toLowerCase());
+
+        // Update the variable sample via concatenation so that it contains "Hello Codeup Students"
+        console.log(sample + " Students");
+
+        // Replace "Students" with "Class"
+        console.log(sample + " Class");
+
+        //Find the index of "c" using .indexOf(), what do you observe?
+        console.log(sample.indexOf("c"));
+
+        //Find the index of "C" using .indexOf().
+        console.log(sample.indexOf("C"));
+
+        // Retrieve a substring that contains only the word "Codeup" by using indexOf() and substring().
+        console.log(sample.substring(sample.indexOf("C"), ));
+
+        // 3. Write some JavaScript code, that is, variables and operators, to describe the following scenarios.
+
+        // You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days),
+        // and Hercules (1 day). If price for a movie per day is $3, how much will you have to pay?
+        var mermaid = 3, bear = 5, hercules = 1;
+        const cost = 3;
+
+        var total_cost = (mermaid * cost) + (bear * cost) + (hercules * cost);
+        console.log(total_cost);
+
+        // Google pays $400, Amazon $380, Facebook $350.
+        // Worked 6 hr at Google, 4 hrs at Amazon, 10 hrs at Facebook
+        // How much will you receive in payment for this week?
+        var google_pay = 400, amazon_pay = 380, fb_pay =350;
+        var google_hours_work = 6, amazon_hours_work = 4, fb_hours_work = 10;
+        var total_payment = (google_pay * google_hours_work) + (amazon_pay * amazon_hours_work) + (fb_pay * fb_hours_work);
+        console.log(total_payment)
+
+        </script>
+        </body>
+    </html>
