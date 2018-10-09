@@ -1,26 +1,26 @@
 
 
 //line generates a random number between 1 and 50
-var random = Math.floor((Math.random()*50)+1);
+var skip = parseFloat(prompt('Enter a number 1-50'));
 
-console.log('Random odd number to skip is: ' + random);
-for (var i = 1; i < 100; i++) {
+console.log('Your number is: ' + skip);
+for (var i = 1; i <= 50; i++) {
 
     if (i % 2 === 0) {
         //skip the even numbers.
         continue;
-
     }
+       else if (i === 50) {
+            break;
+        }
+
+       else if (skip === i) {
+            console.log('Yikes! Skipping number: ' + skip);
+        } else {
+            console.log('Here is an odd number: ' + i);
+        }
 
 
-    if (random === i) {
-        console.log('Yikes! Skipping number: ' + i);
-    } else {
-        console.log('Here is an odd number: ' + i);
-    }
 
-    if ( i === 50) {
-        break;
-    }
 
 }
