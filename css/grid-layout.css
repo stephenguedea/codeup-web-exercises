@@ -4,7 +4,6 @@
     max-width: 1200px;
 
 
-
 }
 .row {
     width: 100%;
@@ -16,17 +15,24 @@
     content: "";
     display: table;
     clear: both;
+
+
 }
 .full {
     width: 100%;
+
 }
 
 .column {
     float: left;
     box-sizing: border-box;
+    background-color: blue;
+    border-color: red;
+
 }
 .column.one-third {
     width: 33.33%;
+
 }
 .column.one-half {
     width: 50%;

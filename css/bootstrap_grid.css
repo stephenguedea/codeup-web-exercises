@@ -1,0 +1,56 @@
+
+.container-fluid {
+    background-color: rgb(240	240	240	);
+
+}
+
+h1 h3 {
+    font-size: 64px;
+    width: 100%;
+}
+.design-circle {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    line-height: 100px;
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+
+    font-family: 'Anton', regular;
+    font-size: 32px;
+}
+
+.red {
+    background-color: #E6563B;
+    border: 5px solid white;
+
+
+}
+.orange {
+    background-color: #EB9D3A;
+    border: 5px solid white;
+}
+.green {
+    background-color: #7CB06C;
+    border: 5px solid white;
+}
+.blue {
+    background-color: #00ABA9;
+    border: 5px solid white;
+}
+
+.img-bg {
+    background-color: rgb(240 240 240);
+
+}
+
+.red-icon {
+    background-color: red;
+}
+.icon {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    text-align: center;
+}

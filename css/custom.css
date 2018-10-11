@@ -1,15 +1,12 @@
-h1.display-4 {
-    width: 100%;
-    margin: 0;
-}
+
 .jumbotron {
     background-image: url("../img/pizza-image.png");
-    width: 100%;
+
 }
 h1 {
     text-align: center;
     background-color: rgba(238,229,241,0.62);
-    width: 100%;
+
 
 }
 .card-header {

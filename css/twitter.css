@@ -27,12 +27,14 @@ a {
     color: var(--link-color);
 }
 .container {
-    margin: 2em;
+    margin-top: 2em;
 
 }
 .top-nav {
     background: var(--light-bg);
     width: 100%;
+    position: fixed;
+    z-index: 1000;
 
 }
 .nav {
@@ -61,7 +63,7 @@ a {
 }
 .profile-image {
     position: absolute;
-    top: 310px;
+    top: 240px;
 }
 .profile-form {
     float: right;
@@ -114,7 +116,7 @@ a {
 
 }
 .media-image {
-    width: 50px;
+    max-width: 50px;
     float: left;
     margin-top: 1.33em;
 }
