@@ -12,19 +12,19 @@
             <h1>jQuery Exercise</h1>
         </header>
         <div id="container">
-            <h1 id="header1">Heading One</h1>
+            <h1>Heading One</h1>
             <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
                 habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-            <h1 id="header2">Heading Two</h1>
+            <h1>Heading Two</h1>
             <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
                 habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-            <h1 class="header3">Heading Three</h1>
+            <h1>Heading Three</h1>
             <p id="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
                 habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
@@ -36,7 +36,7 @@
                 <!--habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem-->
                 <!--ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
 
-            <ul id="list">
+            <ul>
                 <li>List Item</li>
                 <li>List Item</li>
                 <li>List Item</li>
@@ -62,7 +62,16 @@
         // $('ul#list li:odd').css('background', '#cccccc');
 
         // CLASS SELECTORS
-        $('.codeup').css('border', '1px double red');
+        // $('.codeup').css('border', '1px double red');
+
+        // ELEMENT SELECTORS
+        $('li').css('font-size', '20px');
+        $('h1').css('background', 'yellow');
+        $('p').css('background', 'blue');
+        $('li').css('background', '#cccccc');
+        // var contents = ;
+        alert($('h1').html());
+
     </script>
     </body>
 </html>
