@@ -9,26 +9,26 @@
     </head>
     <body>
         <header>
-            <h1>jQuery Exercise</h1>
+            <h1>jQuery Mouse Exercise</h1>
         </header>
         <div id="container">
-            <h1>Heading One</h1>
+            <h1 id="codeup">Heading One</h1>
             <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
                 habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-            <h1>Heading Two</h1>
-            <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
-                habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <!--<h1>Heading Two</h1>-->
+            <!--<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+                <!--Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac-->
+                <!--habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem-->
+                <!--ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
 
-            <h1>Heading Three</h1>
-            <p id="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
-                habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <!--<h1>Heading Three</h1>-->
+            <!--<p id="codeup">Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+                <!--Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac-->
+                <!--habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem-->
+                <!--ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
 
             <!--<h1 class="header4">Heading Four</h1>-->
             <!--<p class="para4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
@@ -36,7 +36,7 @@
                 <!--habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem-->
                 <!--ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
 
-            <ul>
+            <ul id="list">
                 <li>List Item</li>
                 <li>List Item</li>
                 <li>List Item</li>
@@ -73,7 +73,31 @@
         // alert($('h1').html());
 
         // MULTIPLE SELECTORS
-        $('h1, p, li').css('background-color', '#cccccc');
+        // $('h1, p, li').css('background-color', '#cccccc');
+
+        // MOUSE EVENTS
+        $('#codeup').click(function(){
+            if ($(this).css('background-color') === 'rgb(251, 255, 0)') {
+                $(this).css('background-color', 'white');
+            } else {
+                $(this).css('background-color', 'rgb(251, 255, 0)');
+            }
+        });
+
+        $('.codeup').dblclick(function(){
+            if($(this).css('font-size') === '18px') {
+                $(this).css('font-size', '16px');
+            } else {
+                $(this).css('font-size', '18px');
+            }
+        });
+
+        $('li').hover(function(){
+                $(this).css('color', 'red');
+            }, function() {
+                $(this).css('color', 'black');
+            });
+
     </script>
     </body>
 </html>
