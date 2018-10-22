@@ -3,15 +3,63 @@
     <head>
         <meta charset="UTF-8">
         <title>jQuery</title>
+        <style>
+
+        </style>
     </head>
     <body>
+        <header>
+            <h1>jQuery Exercise</h1>
+        </header>
+        <div id="container">
+            <h1 id="header1">Heading One</h1>
+            <p id="para1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
+                habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <h1 id="header2">Heading Two</h1>
+            <p id="para2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
+                habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <h1 class="header3">Heading Three</h1>
+            <p class="para3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
+                habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <h1 class="header4">Heading Four</h1>
+            <p class="para4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
+                habitasses platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <ul id="list">
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+            </ul>
+        </div>
 
 
     <script src="js/jquery-2.2.4.min.js"></script>
     <script>
-        $(document).ready(function () {
-            alert('The DOM has finished loading!');
-        });
+        // $(document).ready(function () {
+        //     alert('The DOM has finished loading!');
+        // });
+
+        // ID SELECTORS
+        $('#header1').css('color', 'blue');
+        $('h1#header2').css('color', 'red');
+
+        $('ul#list li:even').css('background', 'yellow' );
+        $('ul#list li:odd').css('background', '#cccccc');
     </script>
     </body>
 </html>
