@@ -42,8 +42,10 @@
         </header>
         <hr>
         <div id="container">
-
         </div>
+
+
+
         <dl id="list">
             <dt>Question 1</dt>
             <dd class="invisible">Answer</dd>
@@ -67,6 +69,33 @@
             <dd class="invisible">Answer</dd>
         </dl>
 
+        <h3 id="bb">Big Bend National Park</h3>
+        <ul id="big-bend">
+            <li>southwest Texas</li>
+            <li>more than 3600 species found</li>
+            <li>Choke Canyon</li>
+            <li>near the Mexican border</li>
+        </ul>
+
+        <h3 id="guad">Guadalupe Mountains National Park</h3>
+        <ul id="guadalupe">
+            <li>in the vast Chihuahuan Desert</li>
+            <li>Western Texas</li>
+            <li>the four highest peaks in Texas</li>
+            <li>over 86 miles of hiking trails</li>
+        </ul>
+
+        <h3 id="glac">Glacier National Park</h3>
+        <ul id="glacier">
+            <li>1,583-sq.-mi.</li>
+            <li>est. May 11, 1910</li>
+            <li>located in Montana's Rocky Mountains</li>
+            <li>more than 700 miles of hiking trails</li>
+        </ul>
+
+        <button id="btn1" class="btnClass">Button 1</button>
+        <button id="btn2" class="btnClass2">Reset</button>
+
         <script src="js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript">
             "use strict";
@@ -79,6 +108,60 @@
                     $(this).css('background', 'yellow');
                 });
 
+
+                // $('#btn1').click(function () {
+                //     $('li').last().css('background', 'yellow');
+                // })
+
+                // BUTTON TURNS LAST LI BG YELLOW
+                $('#btn1').click(function () {
+                    $('ul#big-bend li:last').css('background', 'yellow');
+                });
+
+                $('#btn1').click(function () {
+                    $('ul#guadalupe li:last').css('background', 'yellow');
+                });
+                $('#btn1').click(function () {
+                    $('ul#glacier li:last').css('background', 'yellow');
+                });
+
+
+                // CHANGES LI FONT BOLD
+                $('#bb').on('click', function () {
+                    $('#big-bend').css('font-weight', 'bold');
+
+                });
+
+                $('#guad').on('click', function () {
+                    $('#guadalupe').css('font-weight', 'bold');
+                });
+                $('#glac').on('click', function () {
+                    $('#glacier').css('font-weight', 'bold');
+                });
+
+                // FIRST LI FONT BLUE
+                $('#big-bend').click(function () {
+                    $('ul#big-bend li:first').css('color', 'blue');
+                });
+                $('#guadalupe').click(function () {
+                    $('ul#guadalupe li:first').css('color', 'blue');
+                });
+                $('#glacier').click(function () {
+                    $('ul#glacier li:first').css('color', 'blue');
+                });
+
+                // RESET BUTTON
+                $('#btn2').on('click', function () {
+                    $('ul#big-bend li:last').css('background', 'none');
+                    $('ul#guadalupe li:last').css('background', 'none');
+                    $('ul#glacier li:last').css('background', 'none');
+                    $('ul#big-bend li:first').css('color', '');
+                    $('ul#guadalupe li:first').css('color', '');
+                    $('ul#glacier li:first').css('color', '');
+                    $('#big-bend').css('font-weight', '');
+                    $('#guadalupe').css('font-weight', '');
+                    $('#glacier').css('font-weight', '');
+                });
             });
 
         </script>
