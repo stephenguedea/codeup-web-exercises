@@ -41,6 +41,12 @@
             <h1>National Parks FAQs</h1>
         </header>
         <hr>
+
+        <div id="top">
+            <h1>Would you like to sign up for our newsletter?<span> x</span></h1>
+
+            <h2>Please Sign Up</h2>
+        </div>
         <div id="container">
         </div>
 
@@ -162,6 +168,28 @@
                     $('#guadalupe').css('font-weight', '');
                     $('#glacier').css('font-weight', '');
                 });
+
+                // SPAN FUNCTION
+                $('span').click(function () {
+                    $('#top').hide();
+                });
+
+                // UL TOGGLE
+                $('ul').hide();
+                $('#bb').click(function () {
+                    $('ul#big-bend').slideToggle();
+                });
+                $('#guad').click(function () {
+                    $('ul#guadalupe').slideToggle();
+                });
+                $('#glac').click(function () {
+                    $('ul#glacier').slideToggle();
+                });
+
+                // H2 FADEIN
+                $('h2').hide().delay(8000);
+                $('h2').fadeIn();
+
             });
 
         </script>
