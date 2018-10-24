@@ -121,14 +121,14 @@
 
                 // BUTTON TURNS LAST LI BG YELLOW
                 $('#btn1').click(function () {
-                    $('ul#big-bend li:last').css('background', 'yellow');
+                    $('#big-bend li').last().css('background', 'yellow');
                 });
 
                 $('#btn1').click(function () {
-                    $('ul#guadalupe li:last').css('background', 'yellow');
+                    $('#guadalupe li').last().css('background', 'yellow');
                 });
                 $('#btn1').click(function () {
-                    $('ul#glacier li:last').css('background', 'yellow');
+                    $('#glacier li').last().css('background', 'yellow');
                 });
 
 
@@ -147,23 +147,26 @@
 
                 // FIRST LI FONT BLUE
                 $('#big-bend').click(function () {
-                    $('ul#big-bend li:first').css('color', 'blue');
+                    $('#big-bend li').first().css('color', 'blue');
                 });
                 $('#guadalupe').click(function () {
-                    $('ul#guadalupe li:first').css('color', 'blue');
+                    $('#guadalupe li').first().css('color', 'blue');
                 });
                 $('#glacier').click(function () {
-                    $('ul#glacier li:first').css('color', 'blue');
+                    $('#glacier li').first().css('color', 'blue');
                 });
 
                 // RESET BUTTON
                 $('#btn2').on('click', function () {
-                    $('ul#big-bend li:last').css('background', 'none');
-                    $('ul#guadalupe li:last').css('background', 'none');
-                    $('ul#glacier li:last').css('background', 'none');
-                    $('ul#big-bend li:first').css('color', '');
-                    $('ul#guadalupe li:first').css('color', '');
-                    $('ul#glacier li:first').css('color', '');
+                    $('#big-bend li').last().css('background', '');
+                    $('#guadalupe li').last().css('background', '');
+                    $('#glacier li').last().css('background', '');
+
+
+                    $('#guadalupe li').first().css('color', 'blue');
+                    $('#big-bend li').first().css('color', 'blue');
+                    $('#glacier li').first().css('color', 'blue');
+
                     $('#big-bend').css('font-weight', '');
                     $('#guadalupe').css('font-weight', '');
                     $('#glacier').css('font-weight', '');
