@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>jQuery FAQ</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <style>
         body {
             font-size: 17px;
@@ -42,8 +43,9 @@
         </header>
         <hr>
 
-        <div id="top">
-            <h1>Would you like to sign up for our newsletter?<span> x</span></h1>
+        <div id="top" class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h1>Would you like to sign up for our newsletter?</h1>
 
             <h2>Please Sign Up</h2>
         </div>
@@ -75,6 +77,8 @@
             <dd class="invisible">Answer</dd>
         </dl>
 
+
+        <!--PARKS-->
         <h3 id="bb">Big Bend National Park</h3>
         <ul id="big-bend">
             <li>southwest Texas</li>
@@ -99,9 +103,14 @@
             <li>more than 700 miles of hiking trails</li>
         </ul>
 
+        <!--BUTTONS-->
         <button id="btn1" class="btnClass">Button 1</button>
         <button id="btn2" class="btnClass2">Reset</button>
 
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript">
             "use strict";
@@ -163,18 +172,37 @@
                     $('#glacier li').last().css('background', '');
 
 
-                    $('#guadalupe li').first().css('color', 'blue');
-                    $('#big-bend li').first().css('color', 'blue');
-                    $('#glacier li').first().css('color', 'blue');
+                    $('#guadalupe li').first().css('color', '');
+                    $('#big-bend li').first().css('color', '');
+                    $('#glacier li').first().css('color', '');
 
                     $('#big-bend').css('font-weight', '');
                     $('#guadalupe').css('font-weight', '');
                     $('#glacier').css('font-weight', '');
+
+                    $('ul').hide();
+
+                    // $('#bb').click(function () {
+                    //     $('ul#big-bend').slideToggle();
+                    // });
+                    // $('#guad').click(function () {
+                    //     $('ul#guadalupe').slideToggle();
+                    // });
+                    // $('#glac').click(function () {
+                    //     $('ul#glacier').slideToggle();
+                    // });
+
                 });
 
+
+
                 // SPAN FUNCTION
-                $('span').click(function () {
-                    $('#top').hide();
+                // $('span').click(function () {
+                //     $('#top').hide();
+                // });
+
+                $('#top').children().children('span').click(function () {
+                    $('#top').fadeOut();
                 });
 
                 // UL TOGGLE
@@ -189,7 +217,12 @@
                     $('ul#glacier').slideToggle();
                 });
 
-                // H2 FADEIN
+                // H2 FADE-IN
+                // $('#myModal').on('shown.bs.modal', function () {
+                //     $('#myInput').focus();
+                //
+                // });
+
                 $('h2').hide().delay(8000);
                 $('h2').fadeIn();
 
