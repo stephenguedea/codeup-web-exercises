@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ajax Blog</title>
+        <style>
+            body {
+                font-size: 17px;
+                font-family: arial;
+                background: #f4f4f4;
+                line-height: 1.5em;
+                background-image: url("img/confectionary.png");
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px black solid;
+            margin-bottom: 10px;
+            border-radius: 25px;
+        }
+        article {
+            margin: 10px;
+            padding: 20px;
+            background: rgba(226,225,222,0.58);
+            color: #333;
+            border-radius: 25px;
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Ajax Blog</h1>
+        </header>
+        <div id="posts">
+        </div>
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <script>
+            (function() {
+                "use strict";
+
+
+                $.get('data/blog.json', function(data) {
+                    $('#posts').html(buildHTML(data));
+                    // $('.result').html(data);
+                });
+
+
+                function buildHTML(data) {
+                    data.reverse();
+                    var innerHTML = '';
+
+                    data.forEach(function (data) {
+                        innerHTML += '<article><td><h1>' + data.title + '</h1></td>';
+                        innerHTML += '<td>' + data.content + '</td>';
+                        innerHTML += '<td><ul><li> ' + data.categories + ' </li></ul></td>';
+                        innerHTML += '<td><h5>Posted ' + data.date + '</h5></td></article>';
+                    });
+
+                    return innerHTML;
+                }
+            })();
+        </script>
+    </body>
+</html>
