@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ES6</title>
+    </head>
+    <body>
+        <h1>ES 6 Overview</h1>
+
+
+    <script>
+        "use strict";
+        //Template Strings
+
+        // const name = 'codeup';
+        // console.log(`Hello, ${name}!`);
+        // console.log(`Hello, ${name.toUpperCase()}!`);
+
+        // for..of
+
+        // Arrow functions
+        // const sayHello = function (name) {
+        //     return 'Hello, ' + name + '!';
+        // }
+        // const sayHello = (name) => 'Hello, ' + name + '!';
+        // const sayHello = name => 'Hello, ' + name + '!';
+
+        // const sayHello = name => {
+        //     const greeting = 'hello, ' + name + '!';
+        //     return greeting;
+        // };
+        // console.log(sayHello('Bill'));
+
+        // DEFAULT FUNCTION PARAMETER VALUES
+        function sayHello(name = 'World') {
+            return `hello, ${name}!`;
+        }
+        console.log(sayHello());
+        console.log(sayHello('codeup'));
+
+        // OBJECT PROPERTY VARIABLE ASSIGNMENT SHORTHAND
+        // OLD WAY
+        // const name = 'codeup';
+        // const person = {
+        //     name: name,
+        //     age: 4
+        // };
+
+        // NEW SHORTHAND
+        // const name = 'Stephen Ray Guedea';
+        // const email = 'guedea.stephen@gmail.com';
+        // const languages = ['HTML/CSS', 'JavaScript', 'C++', 'MySQL', 'PHP', 'Python'];
+        // // const name = 'codeup';
+        // const person = {
+        //     name,
+        //     email,
+        //     languages
+        // };
+
+        // OBJECT DESTRUCTURING
+
+        // OLD WAY
+        // function applicantInfo(person) {
+        //     var name = person.name;
+        //     var age = person.age;
+        //     console.log(name);
+        //     console.log(age);
+        // }
+        //
+        // const person = { name: 'stephen', age: 28 };
+        // applicantInfo(person);
+
+
+        // NEW WAY
+        // function applicantInfo({ name, age, email, languages }) {
+        //     console.log(name);
+        //     console.log(age);
+        //     console.log(languages);
+        // }
+        // const person = { name: 'Stephen', age: 28, email: 'guedea@yahoo.com', languages: ['HTML/CSS', 'JavaScript', 'C++', 'MySQL', 'PHP', 'Python']};
+        // applicantInfo(person);
+
+        // we can also use destructuring with arrays
+        const languages = ['HTML/CSS', 'JavaScript', 'C++', 'MySQL', 'PHP', 'Python'];
+        const [ a, b, c, d ] = languages;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+
+    </script>
+    </body>
+</html>
