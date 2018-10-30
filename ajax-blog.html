@@ -9,9 +9,11 @@
                 font-family: arial;
                 background: #f4f4f4;
                 line-height: 1.5em;
-                background-image: url("img/confectionary.png");
+                background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+                background-blend-mode: normal, lighten, soft-light;
+
         }
-        header {
+            header {
             background: #333;
             color: white;
             padding: 20px;
@@ -19,22 +21,68 @@
             border-bottom: 4px black solid;
             margin-bottom: 10px;
             border-radius: 25px;
+
         }
-        article {
+            article {
             margin: 10px;
             padding: 20px;
             background: rgba(226,225,222,0.58);
-            color: #333;
+                background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+                /*background-image: url("img/confectionary.png");*/
+                /*background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);*/
+                /*background: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%);*/
+
+                color: whitesmoke;
             border-radius: 25px;
-        }
+            display: none;
+
+            }
+            #share-buttons img {
+                width: 35px;
+                padding: 5px;
+                border: 0;
+                display: inline;
+                text-align: right;
+            }
 
 
         </style>
     </head>
     <body>
         <header>
-            <h1>Ajax Blog</h1>
+            <h1>Click Here!</h1>
         </header>
+        <div id="share-buttons">
+
+            <!--Facebook-->
+            <a href="http://www.facebook.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+            </a>
+
+            <!-- Twitter -->
+            <a href="https://twitter.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+            </a>
+
+            <!-- Google+ -->
+            <a href="https://plus.google.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="http://www.linkedin.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+                <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+            </a>
+
+
+
+
+        </div>
         <div id="posts">
         </div>
 
@@ -47,11 +95,29 @@
         <script>
             (function() {
                 "use strict";
-
+                alert("Welcome to my blog!");
 
                 $.get('data/blog.json', function(data) {
                     $('#posts').html(buildHTML(data));
                     // $('.result').html(data);
+                });
+
+                $('header').click(function () {
+                    if ($(this).html() === ('<h1>Here are the blogs!</h1>')) {
+                        $(this).html('<h1>Bye bye blogs!</h1>')
+                    } else {
+                        $(this).html('<h1>Here are the blogs!</h1>');
+                    }
+                    $('article').fadeToggle();
+
+
+
+                    // if ($(this).fadeIn()) {
+                    // $('header').html('<h1>Check out my blogs!</h1>');
+                    // }
+                    // else if ($(this).fadeOut()) {
+                    // $('header').html('<h1>Good-bye!</h1>')
+                    // }
                 });
 
 
@@ -60,10 +126,10 @@
                     var innerHTML = '';
 
                     data.forEach(function (data) {
-                        innerHTML += '<article><td><h1>' + data.title + '</h1></td>';
-                        innerHTML += '<td>' + data.content + '</td>';
-                        innerHTML += '<td><ul><li> ' + data.categories + ' </li></ul></td>';
-                        innerHTML += '<td><h5>Posted ' + data.date + '</h5></td></article>';
+                        innerHTML += '<article><td><h1 id="postTitle">' + data.title + '</h1></td>';
+                        innerHTML += '<td id="content">' + data.content + '</td>';
+                        innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';
+                        innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';
                     });
 
                     return innerHTML;
