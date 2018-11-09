@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     "use strict";
 
     /**
@@ -18,8 +18,8 @@
     //          console.log('Hello from ' + person.firstName + " " + person.lastName + "!");
     //      }
     // };
-     // console.log(person.firstName);
-     // console.log(person.lastName);
+    // console.log(person.firstName);
+    // console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -29,6 +29,9 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    // person.sayHello = function() {
+    //  return "Hello from ' + this.firstName + " " + this.lastName;
+    //};
 
     // console.log(person.sayHello());
     /** TODO:
@@ -46,31 +49,31 @@
      */
     // if shopper amount >= 200, amount = amount * .12;
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-    //
-    // // function to apply discount and update amount
-    // function discount(amount) {
-    //     if (amount >= 200) {
-    //         amount = parseFloat(amount - (amount * .12).toFixed(2));
-    //     }
-    //     return amount;
-    // }
-    // // console.log(discount(150));
-    //
-    //
-    // shoppers.forEach(function (shopper) {
-    //     // shopper.amount = discount(amount);
-    //     console.log("Shopper: " + shopper.name);
-    //     console.log("Amount: " + shopper.amount);
-    //     console.log('Discount Amount: ' + (shopper.amount - discount(shopper.amount)).toFixed(2));
-    //     console.log("Total Amount: " + discount(shopper.amount));
-    // });
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
-    // discount(shoppers);
+    // function to apply discount and update amount
+    function discount(amount) {
+        if (amount >= 200) {
+            amount = parseFloat(amount - (amount * .12).toFixed(2));
+        }
+        return amount;
+    }
+    // console.log(discount(150));
+
+
+    shoppers.forEach(function (shopper) {
+        // shopper.amount = discount(amount);
+        console.log("Shopper: " + shopper.name);
+        console.log("Amount: " + shopper.amount);
+        console.log('Discount Amount: ' + (shopper.amount - discount(shopper.amount)).toFixed(2));
+        console.log("Total Amount: " + discount(shopper.amount));
+    });
+
+    discount(shoppers);
 
 
     /** TODO:
@@ -85,11 +88,14 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    //variable named books
     var books = [
         {
+            //books' properties named title, and author
             title: 'The Salmon of Doubt',
             author:
                 {
+                    //author's object with properties named firstName and lastName
                     firstName: 'Douglas',
                     lastName: 'Adams'
                 }
@@ -125,7 +131,7 @@
                 }
         },
         {
-            title: 'Harry Potter and the Deathly Hollows',
+            title: 'Harry Potter and the Deathly Hallows',
             author:
                 {
                     firstName: 'J.K',
@@ -187,7 +193,7 @@
         );
     }
     createBook('Batman', 'Bob', 'Kane');
-    createBook('The Rap Book', 'Shea', 'Sarrantino');
+    createBook('The Rap Book', 'Shea', 'Serrano');
     console.log(books);
     console.log(books[5].title);
     console.log(books[6].author.firstName);
@@ -206,4 +212,4 @@
     }
     showBookInfo();
     console.log(showBookInfo());
-})();
+// })();

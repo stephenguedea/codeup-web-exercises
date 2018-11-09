@@ -81,7 +81,7 @@
         // }
 
         //INSTRUCTOR'S
-        var listListner = function (event) {
+        var listListener = function (event) {
             for (var i = 0; i < listItems.length; i += 1) {
                 if (listItems[i].getAttribute('data-dbid') === '1') {
                     listItems[i].style.color = 'blue';
@@ -94,7 +94,7 @@
         }
 
         var btn3 = document.getElementById('btn3');
-        btn3.addEventListener('click', listListner, false);
+        btn3.addEventListener('click', listListener, false);
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph

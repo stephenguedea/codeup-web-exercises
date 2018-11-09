@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Conditional JS Intro</title>
+        </head>
+        <body>
+        <script type="text/javascript">
+            "use strict";
+
+            var answer = confirm("Would you like to enter a number?");
+            if (answer == true) {
+                EvenOrOdd();
+                addOneHundred();
+            } else {
+                alert("Okay, bye!");
+            }
+
+
+
+            function EvenOrOdd (input) {
+                {
+                    var number = prompt("Great! Enter a number: ");
+                    if (number % 2 == 0) {
+                        alert("You entered an even number!");
+                    } else {
+                        alert("You entered an odd number!");
+                    }
+
+                    if (number > 0) {
+                        alert("You entered a positive number.");
+                    } else {
+                        alert("You entered a negative number.");
+                    }
+
+                    // alert(number + " +  100 = " + Number(number) + 100);
+
+                }
+                return input;
+            }
+            function addOneHundred(number) {
+                alert(number + " + " + 100 + " = " + addOneHundred(number));
+                return Number(number) + 100;
+
+            }
+
+
+
+
+
+
+
+            // var apples = 11;
+            //
+            // if (apples >= 4) {
+            //     alert("I have a lot of apples");
+            // } else if (apples <= 3 && apples > 1) {
+            //     alert("I have a few apples");
+            // } else if (apples == 1) {
+            //     alert("One lonely apple");
+            // }
+            //
+            // var input = "Bob";
+            // if (input === "Bob") {
+            //     alert("Hi Bob!");
+            // };
+            // var input = prompt("What is your name?");
+            //
+            // switch(input) {
+            //     case "Bob":
+            //         alert("Hi Bob!");
+            //         break;
+            //     case "Jane":
+            //         alert("OMG it's Jane");
+            //         break;
+            //     case "Jim":
+            //         alert("Hey there Jimbo");
+            //         break;
+            //     default:
+            //         alert("Who are you?");
+            //
+            // }
+
+            // var lightColor = prompt("What color is the traffic light?");
+            // if(lightColor === 'green') {
+            //     console.log("Proceede");
+            // } else if (lightColor === 'yellow') {
+            //     var haveEnoughTimeToStop = confirm('Do you have enough time to safely stop?');
+            //     if (haveEnoughTimeToStop) {
+            //         console.log("Come to a full and complete stop");
+            //     } else {
+            //         console.log("Proceed through the yellow light.");
+            //     }
+            // } else {
+            //     console.log("Come to a full and complete stop.");
+            // }
+
+            // function isVowel(letter) {
+            //     if (typeof letter != 'string') {
+            //         return false
+            //     } else {
+            //         letter = letter.toLowerCase();
+            //         // return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u';
+            //         // OR... //
+            //         return (/^[aeiou]$/i).test();
+            //     }
+            // }
+            // console.log(isVowel())
+
+            // IFFE
+            // function runTheEntireProgram() {
+            //     // all the code for your entire program
+            //
+            //
+            // }
+            // runTheEntireProgram();
+
+        </script>
+
+        </body>
+    </html>

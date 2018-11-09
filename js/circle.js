@@ -11,6 +11,7 @@
             // hint: area = pi * radius^2
 
             var area = Math.PI * Math.pow(circle.radius, 2);
+            // var area = Math.PI * Math.pow(this.radius, 2);
             return area; // TODO: return the proper value
         },
 
