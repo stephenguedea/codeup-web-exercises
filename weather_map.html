@@ -62,9 +62,10 @@
 
     <header>
         <h1>3-Day Weather Application</h1>
-        <h3>San Antonio, TX</h3>
     </header>
     <br><br>
+
+    <h1 id="mapMarker"></h1>
 
     <div id="weather">
         <div id="day"></div>
@@ -72,188 +73,189 @@
         <!--<div id="day3"></div>-->
     </div>
     <br><br>
+    <h3>Drag the marker to see a city's 3-day forecast</h3>
     <div id="map-canvas"></div>
 </main>
 
 
 
 <!-- jQuery Version 2.2.4 -->
-<script src="js/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 <!-- Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmSjs9NqIMb-td_FmAt81QiFg4DziT8bg"></script>
 
-<!-- Custom JS -->
-<script>
-    $(document).ready(function() {
-        "use strict";
-        var mapPosition = {
-            lat: 29.4221,
-            lon: -98.4836
-        };
+<!-- Custom JavaScript -->
+<script src="js/weather_map.js"></script>
+    <!--// $(document).ready(function() {-->
+    <!--//     "use strict";-->
+    <!--//     var mapPosition = {-->
+    <!--//         lat: 29.4221,-->
+    <!--//         lon: -98.4836-->
+    <!--//     };-->
+    <!--//-->
+    <!--//     // MAP DISPLAYING-->
+    <!--//         // Set our map options-->
+    <!--//     function mapMarker() {-->
+    <!--//         var mapOptions = {-->
+    <!--//             // Set the zoom level-->
+    <!--//             zoom: 10,-->
+    <!--//-->
+    <!--//             // This sets the center of the map at our location-->
+    <!--//             center: {-->
+    <!--//                 lat: mapPosition.lat,-->
+    <!--//                 lng: mapPosition.lon-->
+    <!--//             }-->
+    <!--//         };-->
+    <!--//-->
+    <!--//         // Render the map-->
+    <!--//         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);-->
+    <!--//-->
+    <!--//-->
+    <!--//         // ADD MARKER-->
+    <!--//         var marker = new google.maps.Marker({-->
+    <!--//             position: {lat: 29.4221, lng: -98.4836},-->
+    <!--//             map: map,-->
+    <!--//             draggable: true-->
+    <!--//         });-->
+    <!--//-->
+    <!--//         marker.addListener('dragend', function (event) {-->
+    <!--//             mapPosition.lat = this.getPosition().lat();-->
+    <!--//             mapPosition.lon = this.getPosition().lng();-->
+    <!--//         mapData();-->
+    <!--//-->
+    <!--//         });-->
+    <!--//     }-->
+    <!--//     mapMarker();-->
+    <!--//-->
+    <!--//-->
+    <!--//-->
+    <!--//-->
+    <!--//-->
+    <!--//     // WEATHER INFO AND DISPLAY-->
+    <!--//     function buildHTML(data) {-->
+    <!--//         var innerHTML = '';-->
+    <!--//         //-->
+    <!--//         // data.list.forEach(function (datalist) {-->
+    <!--//         //     innerHTML += '<div id="day"><h5>Min: ' + datalist.main.temp_min + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>Max: ' + datalist.main.temp_max + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.weather[0].main + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.weather[0].description + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.main.humidity + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.wind.speed + '</h5></div> ';-->
+    <!--//         //-->
+    <!--//         //     // innerHTML += '<td id="content">' + data.content + '</td>';-->
+    <!--//         //     // innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';-->
+    <!--//         //     // innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';-->
+    <!--//         // });-->
+    <!--//-->
+    <!--//         for (var i = 0; i < data.list.length - 16; i += 8) {-->
+    <!--//                 console.log(data.list[i]);-->
+    <!--//-->
+    <!--//                 innerHTML += '<div id="day"><h5>' + data.list[i].main.temp_max.toFixed(0) + ' / ' + data.list[i].main.temp_min.toFixed(0) + '</h5>';-->
+    <!--//                 // innerHTML += '<div id="day"><h5>Min: ' + data.list[i].main.temp_min + ' ';-->
+    <!--//                 // innerHTML += '<' + data.list[i].main.temp_max + '</h5>';-->
+    <!--//                 innerHTML += '<h5>' + data.list[i].weather[0].main + '</h5>';-->
+    <!--//                 innerHTML += '<img src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png">';-->
+    <!--//-->
+    <!--//                 innerHTML += '<h5>Clouds: ' + data.list[i].weather[0].description + '</h5>';-->
+    <!--//                 innerHTML += '<h5>Humidity: ' + data.list[i].main.humidity + '</h5>';-->
+    <!--//                 innerHTML += '<h5>Wind: ' + data.list[i].wind.speed + '</h5>';-->
+    <!--//                 innerHTML += '<h5>Pressure: ' + data.list[i].main.pressure + '</h5></div>';-->
+    <!--//-->
+    <!--//                 // innerHTML += '<td id="content">' + data.content + '</td>';-->
+    <!--//                 // innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';-->
+    <!--//                 // innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';-->
+    <!--//         }-->
+    <!--//-->
+    <!--//         // data.list.forEach(function (datalist) {-->
+    <!--//         //     innerHTML += '<div id="day"><h5>Min: ' + datalist.main.temp_min + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>Max: ' + datalist.main.temp_max + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.weather[0].main + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.weather[0].description + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.main.humidity + '</h5>';-->
+    <!--//         //     innerHTML += '<h5>' + datalist.wind.speed + '</h5></div> ';-->
+    <!--//         //-->
+    <!--//         //     // innerHTML += '<td id="content">' + data.content + '</td>';-->
+    <!--//         //     // innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';-->
+    <!--//         //     // innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';-->
+    <!--//         // });-->
+    <!--//         //-->
+    <!--//         return innerHTML;-->
+    <!--//     }-->
+    <!--//-->
+    <!--//     // MAP INFORMATION-->
+    <!--//     function mapData() {-->
+    <!--//     $.get("http://api.openweathermap.org/data/2.5/forecast", {-->
+    <!--//         APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",-->
+    <!--//         // lat: 29.423017,-->
+    <!--//         // lon: -98.48527,-->
+    <!--//         lat: mapPosition.lat,-->
+    <!--//         lon: mapPosition.lon,-->
+    <!--//         // id: 4726206,-->
+    <!--//         // q:     "San Antonio, US",-->
+    <!--//         units: 'imperial'-->
+    <!--//     }).done(function(data) {-->
+    <!--//         $('#weather').html(buildHTML(data));-->
+    <!--//         // console.log(data);-->
+    <!--//         // console.log('Day 1');-->
+    <!--//         // console.log(data.list[0].main.temp_min);-->
+    <!--//         // console.log(data.list[0].main.temp_max);-->
+    <!--//         // console.log(data.list[0].weather[0].main);-->
+    <!--//         // console.log(data.list[0].weather[0].description);-->
+    <!--//         // console.log(data.list[0].main.humidity);-->
+    <!--//         // console.log(data.list[0].wind.speed);-->
+    <!--//         // console.log(data.list[0].main.pressure);-->
+    <!--//         // console.log('&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;');-->
+    <!--//         //-->
+    <!--//         //-->
+    <!--//         //-->
+    <!--//         // console.log('Day 2');-->
+    <!--//         //-->
+    <!--//         // console.log(data.list[1].main.temp_min);-->
+    <!--//         // console.log(data.list[1].main.temp_max);-->
+    <!--//         // console.log(data.list[1].weather[0].main);-->
+    <!--//         // console.log(data.list[1].weather[0].description);-->
+    <!--//         // console.log(data.list[1].main.humidity);-->
+    <!--//         // console.log(data.list[1].wind.speed);-->
+    <!--//         // console.log(data.list[1].main.pressure);-->
+    <!--//         // console.log('&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;');-->
+    <!--//         //-->
+    <!--//         //-->
+    <!--//         // console.log('Day 3');-->
+    <!--//         //-->
+    <!--//         // console.log(data.list[2].main.temp_min);-->
+    <!--//         // console.log(data.list[2].main.temp_max);-->
+    <!--//         // console.log(data.list[2].weather[0].main);-->
+    <!--//         // console.log(data.list[2].weather[0].description);-->
+    <!--//         // console.log(data.list[2].main.humidity);-->
+    <!--//         // console.log(data.list[2].wind.speed);-->
+    <!--//         // console.log(data.list[2].main.pressure);-->
+    <!--//         // console.log('&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;');-->
+    <!--//         //-->
+    <!--//         //-->
+    <!--//         //-->
+    <!--//         // console.log('ID: ' + data.city.id);-->
+    <!--//         // console.log("City: " + data.city.name);-->
+    <!--//         // console.log('Coords:');-->
+    <!--//         // console.log(data.city.coord.lat);-->
+    <!--//         // console.log(data.city.coord.lon);-->
+    <!--//         // console.log(data.list[0].weather[0]);-->
+    <!--//         // console.log(data.list[4].weather[0].description);-->
+    <!--//     });-->
+    <!--//     }-->
+    <!--//     // $.get(function(data) {-->
+    <!--//     //     $('#weather').html(buildHTML(data));-->
+    <!--//         // $('.result').html(data);-->
+    <!--//     // });-->
+    <!--//     // buildHTML(data);-->
+    <!--//-->
+    <!--//     mapData();-->
+    <!--//-->
+    <!--//-->
+    <!--// });-->
 
-        // MAP DISPLAYING
-            // Set our map options
-        function mapMarker() {
-            var mapOptions = {
-                // Set the zoom level
-                zoom: 10,
-
-                // This sets the center of the map at our location
-                center: {
-                    lat: mapPosition.lat,
-                    lng: mapPosition.lon
-                }
-            };
-
-            // Render the map
-            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-
-            // ADD MARKER
-            var marker = new google.maps.Marker({
-                position: {lat: 29.4221, lng: -98.4836},
-                map: map,
-                draggable: true
-            });
-
-            marker.addListener('dragend', function (event) {
-                mapPosition.lat = this.getPosition().lat();
-                mapPosition.lon = this.getPosition().lng();
-            mapData();
-
-            });
-        }
-        mapMarker();
-
-
-
-
-
-        // WEATHER INFO AND DISPLAY
-        function buildHTML(data) {
-            var innerHTML = '';
-            //
-            // data.list.forEach(function (datalist) {
-            //     innerHTML += '<div id="day"><h5>Min: ' + datalist.main.temp_min + '</h5>';
-            //     innerHTML += '<h5>Max: ' + datalist.main.temp_max + '</h5>';
-            //     innerHTML += '<h5>' + datalist.weather[0].main + '</h5>';
-            //     innerHTML += '<h5>' + datalist.weather[0].description + '</h5>';
-            //     innerHTML += '<h5>' + datalist.main.humidity + '</h5>';
-            //     innerHTML += '<h5>' + datalist.wind.speed + '</h5></div> ';
-            //
-            //     // innerHTML += '<td id="content">' + data.content + '</td>';
-            //     // innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';
-            //     // innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';
-            // });
-
-            for (var i = 0; i < data.list.length - 16; i += 8) {
-                    console.log(data.list[i]);
-
-                    innerHTML += '<div id="day"><h5>' + data.list[i].main.temp_max.toFixed(0) + ' / ' + data.list[i].main.temp_min.toFixed(0) + '</h5>';
-                    // innerHTML += '<div id="day"><h5>Min: ' + data.list[i].main.temp_min + ' ';
-                    // innerHTML += '<' + data.list[i].main.temp_max + '</h5>';
-                    innerHTML += '<h5>' + data.list[i].weather[0].main + '</h5>';
-                    innerHTML += '<img src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png">';
-
-                    innerHTML += '<h5>Clouds: ' + data.list[i].weather[0].description + '</h5>';
-                    innerHTML += '<h5>Humidity: ' + data.list[i].main.humidity + '</h5>';
-                    innerHTML += '<h5>Wind: ' + data.list[i].wind.speed + '</h5>';
-                    innerHTML += '<h5>Pressure: ' + data.list[i].main.pressure + '</h5></div>';
-
-                    // innerHTML += '<td id="content">' + data.content + '</td>';
-                    // innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';
-                    // innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';
-            }
-
-            // data.list.forEach(function (datalist) {
-            //     innerHTML += '<div id="day"><h5>Min: ' + datalist.main.temp_min + '</h5>';
-            //     innerHTML += '<h5>Max: ' + datalist.main.temp_max + '</h5>';
-            //     innerHTML += '<h5>' + datalist.weather[0].main + '</h5>';
-            //     innerHTML += '<h5>' + datalist.weather[0].description + '</h5>';
-            //     innerHTML += '<h5>' + datalist.main.humidity + '</h5>';
-            //     innerHTML += '<h5>' + datalist.wind.speed + '</h5></div> ';
-            //
-            //     // innerHTML += '<td id="content">' + data.content + '</td>';
-            //     // innerHTML += '<td id="categories"><ul><li> ' + data.categories + ' </li></ul></td>';
-            //     // innerHTML += '<td id="dates"><h5>Posted ' + data.date + '</h5></td></article>';
-            // });
-            //
-            return innerHTML;
-        }
-
-        // MAP INFORMATION
-        function mapData() {
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
-            // lat: 29.423017,
-            // lon: -98.48527,
-            lat: mapPosition.lat,
-            lon: mapPosition.lon,
-            // id: 4726206,
-            // q:     "San Antonio, US",
-            units: 'imperial'
-        }).done(function(data) {
-            $('#weather').html(buildHTML(data));
-            // console.log(data);
-            // console.log('Day 1');
-            // console.log(data.list[0].main.temp_min);
-            // console.log(data.list[0].main.temp_max);
-            // console.log(data.list[0].weather[0].main);
-            // console.log(data.list[0].weather[0].description);
-            // console.log(data.list[0].main.humidity);
-            // console.log(data.list[0].wind.speed);
-            // console.log(data.list[0].main.pressure);
-            // console.log('------------');
-            //
-            //
-            //
-            // console.log('Day 2');
-            //
-            // console.log(data.list[1].main.temp_min);
-            // console.log(data.list[1].main.temp_max);
-            // console.log(data.list[1].weather[0].main);
-            // console.log(data.list[1].weather[0].description);
-            // console.log(data.list[1].main.humidity);
-            // console.log(data.list[1].wind.speed);
-            // console.log(data.list[1].main.pressure);
-            // console.log('------------');
-            //
-            //
-            // console.log('Day 3');
-            //
-            // console.log(data.list[2].main.temp_min);
-            // console.log(data.list[2].main.temp_max);
-            // console.log(data.list[2].weather[0].main);
-            // console.log(data.list[2].weather[0].description);
-            // console.log(data.list[2].main.humidity);
-            // console.log(data.list[2].wind.speed);
-            // console.log(data.list[2].main.pressure);
-            // console.log('------------');
-            //
-            //
-            //
-            // console.log('ID: ' + data.city.id);
-            // console.log("City: " + data.city.name);
-            // console.log('Coords:');
-            // console.log(data.city.coord.lat);
-            // console.log(data.city.coord.lon);
-            // console.log(data.list[0].weather[0]);
-            // console.log(data.list[4].weather[0].description);
-        });
-        }
-        // $.get(function(data) {
-        //     $('#weather').html(buildHTML(data));
-            // $('.result').html(data);
-        // });
-        // buildHTML(data);
-
-        mapData();
-
-
-    });
-
-</script>
+<!--</script>-->
 
 </body>
 </html>
