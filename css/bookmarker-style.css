@@ -1,6 +1,7 @@
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: rebeccapurple;
 }
 
 .header,
@@ -21,10 +22,15 @@ body {
     line-height: 40px;
 }
 
-.footer {
-    padding-top: 15px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+#footer {
+
+    position: fixed;
+    margin-top: -180px;
+    /* negative value of footer height */
+    height: 180px;
+    clear: both;
+    background-color: red;
+
 }
 
 @media (min-width: 768px) {
